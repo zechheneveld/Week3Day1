@@ -10,21 +10,29 @@ public class Main {
         BankAccount marksAccount = new BankAccount(94832, "Mark", 0.00);
         BankAccount mannysAccount = new BankAccount(94820, "Manny", 0.00);
 
+        BankAccount lorisAccount = new BankAccount(13245, "Lori");
+
+        BankAccount unknownAccount = new BankAccount(18472);
+
+
         //Array loop
-        BankAccount[] listofAccounts = {scottsAccount, koddiesAccount, marksAccount, mannysAccount};
+        BankAccount[] listofAccounts = {scottsAccount, koddiesAccount,
+                                        marksAccount, mannysAccount,
+                                        lorisAccount, unknownAccount};
 
         //System.out.println(listofAccounts[0].balance); This will only display scotts balance
 
         for (int i = 0; i < listofAccounts.length; i++) {
             listofAccounts[i].deposit(57000);
-            System.out.println(listofAccounts[i].accHolderName + " " + listofAccounts[i].balance);
+            System.out.println(listofAccounts[i].accHolderName + ": " + listofAccounts[i].balance);
 
         }
         //new loop (foreach loop)!!! Cannot pinpoint just one account with this loop :(
         for (BankAccount specificAccount : listofAccounts){
-            System.out.println(specificAccount.accHolderName);
+            System.out.println(specificAccount.accHolderName + " add 500:");
             specificAccount.deposit(500);
             System.out.println(specificAccount.balance);
+
         }
 
 
